@@ -17,8 +17,8 @@ SELECT * FROM versiones;
 CREATE TABLE sucursales(
 	id_sucursal INT,
 	nombre VARCHAR(50),
-	ciuadad VARCHAR(50),
-	id_versione INT,
+	ciudad VARCHAR(50),
+	id_version INT,
 	stock INT
 );
 SELECT * FROM sucursales;
