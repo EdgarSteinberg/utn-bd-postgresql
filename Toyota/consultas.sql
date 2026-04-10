@@ -86,8 +86,20 @@ SELECT * FROM modelos;
 -- 18.	Mostrar nombre y precio de todas las versiones.
 SELECT nombre , precio FROM versiones;
 
--- 19.	Mostrar todas las sucursales de la ciudad 'Buenos Aires'
-SELECT m.nombre AS modelo, v.nombre AS version 
+-- 19.	Mostrar las versiones cuyo precio sea mayor a 50.000.000.
+SELECT * FROM versiones
+WHERE precio > 50000000;
+
+-- 20.	Mostrar el nombre del modelo y el nombre de la versión.
+SELECT m.nombre AS modelo, v.nombre AS version
 FROM modelos m
-JOIN versiones v ON m.id_models = v.id_version
-;
+JOIN versiones v ON m.id_modelo = v.id_modelo;
+
+-- 21.	Mostrar ciudad, nombre del modelo, nombre de la versión y stock.
+SELECT s.ciudad, m.nombre AS modelo, v.nombre AS version, s.stock
+FROM sucursales s
+JOIN versiones v ON s.id_version = v.id_version
+JOIN modelos m ON v.id_modelo = m.id_modelo;
+
+
+-- 22.	Mostrar todas las versiones junto con su modelo, ordenadas por precio de mayor a menor.
