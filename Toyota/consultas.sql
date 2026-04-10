@@ -1,4 +1,6 @@
 -- DDL – Definición de datos
+-- 👉 Usás id cuando querés relacionar datos entre tablas
+-- 👉 Usás nombres/columnas normales cuando querés mostrar dato
 
 -- 4.	Agregar una columna año (INT) a la tabla versiones.
 ALTER TABLE versiones
@@ -95,11 +97,20 @@ SELECT m.nombre AS modelo, v.nombre AS version
 FROM modelos m
 JOIN versiones v ON m.id_modelo = v.id_modelo;
 
--- 21.	Mostrar ciudad, nombre del modelo, nombre de la versión y stock.
+--21. Mostrar el nombre del modelo y el nombre de la versión.
+SELECT m.nombre AS modelo, v.nombre AS version
+FROM versiones v
+JOIN modelos m ON m.id_modelo = v.id_modelo;
+
+-- 22.	Mostrar ciudad, nombre del modelo, nombre de la versión y stock.
 SELECT s.ciudad, m.nombre AS modelo, v.nombre AS version, s.stock
 FROM sucursales s
 JOIN versiones v ON s.id_version = v.id_version
 JOIN modelos m ON v.id_modelo = m.id_modelo;
 
 
--- 22.	Mostrar todas las versiones junto con su modelo, ordenadas por precio de mayor a menor.
+-- 23. Mostrar todas las versiones junto con su modelo, ordenadas por precio de mayor a menor
+SELECT v.nombre AS version, m.nombre AS modelo
+FROM versiones v
+JOIN modelos m ON v.id_modelo = m.id_modelo
+ORDER BY v.precio DESC;
