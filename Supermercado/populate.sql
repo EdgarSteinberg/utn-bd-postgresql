@@ -26,3 +26,8 @@ INSERT INTO productos (id_producto, nombre, precio, id_categoria) VALUES
 (9, 'Lavandina', 1300, 3),
 (10, 'Arroz', 1400, 4),
 (11, 'Helado', 999, NULL); -- producto sin categoria (congelado)
+
+
+SELECT * FROM sucursales;
+SELECT * FROM categorias;
+SELECT * FROM productos;

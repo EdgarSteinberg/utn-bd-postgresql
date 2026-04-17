@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS sucursales;
+DROP TABLE IF EXISTS categorias;
+DROP TABLE IF EXISTS productos;
+
 -- =====================================
 -- CREACIÓN DE TABLAS
 -- =====================================
@@ -20,3 +24,7 @@ CREATE TABLE productos (
     precio DECIMAL(10,2),
     id_categoria INT
 );
+
+SELECT * FROM sucursales;
+SELECT * FROM categorias;
+SELECT * FROM productos;
