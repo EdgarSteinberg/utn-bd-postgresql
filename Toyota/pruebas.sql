@@ -101,3 +101,70 @@ SELECT s.ciudad , m.nombre AS modelo , v.nombre AS version , s.stock
 FROM sucursales s 
 JOIN versiones v ON s.id_version = v.id_version 
 JOIN modelos m ON m.id_modelo = v.id_modelo;
+SELECT * FROM modelos;
+SELECT * FROM sucursales;
+SELECT * FROM versiones;
+
+--23. Insertar un nuevo registro en la tabla modelos con los siguientes valores:
+--• id_modelo: NULL
+--• nombre: 'Modelo X'
+--• tipo: 'sedan'
+INSERT INTO modelos VALUES
+(NULL, 'Modelo X', 'Sedan');
+
+--24. Insertar un nuevo registro en la tabla modelos con los siguientes valores:
+--• id_modelo: 1
+--• nombre: 'Modelo duplicado'
+--• tipo: 'suv'
+INSERT INTO modelos VALUES
+(1, 'Modelo Duplicado', 'sub');
+
+--25. Insertar un nuevo registro en la tabla versiones con los siguientes valores:
+--• id_version: 99
+--• id_modelo: 999
+--• nombre: 'Versión inválida'
+--• motor: 'nafta'
+--• precio: 1000000 
+INSERT INTO versiones VALUES
+(99,999,'Versión inválida', 'nafta', 1000000);
+
+
+--26. Insertar un nuevo registro en la tabla sucursales con los siguientes valores:
+--• id_sucursal: 99
+--• nombre: 'Sucursal Fantasma'
+--• ciudad: 'Buenos Aires'
+--• id_version: 999
+--• stock: 10 
+INSERT INTO sucursales VALUES
+(99, 'Sucursal Fantasma', 'Buenos Aires', 999, 10);
+
+--27. Eliminar el registro de la tabla modelos cuyo id_modelo sea 1.
+DELETE FROM modelos WHERE id_modelo = 1;
+
+--28. Eliminar el registro de la tabla versiones cuyo id_version sea 1.
+DELETE FROM versiones WHERE id_version = 1;
+
+--29. Insertar un nuevo registro en la tabla versiones con los siguientes valores:
+--• id_version: 1
+--• id_modelo: 1
+--• nombre: 'Duplicado'
+--• motor: 'nafta'
+--• precio: 100 
+INSERT INTO versiones VALUES
+(1,1,'Duplicado','nafta', 100);
+
+--30. Actualizar el campo id_modelo de la tabla versiones a 999 para el registro cuyo
+--id_version sea 1.
+UPDATE versiones
+SET id_modelo = 999
+WHERE id_version = 1;
+
+--31. Intentar eliminar completamente la tabla modelos.
+--borra los registros (las filas), pero la tabla sigue existiendo.
+DELETE FROM modelos;
+--elimina la tabla completa (estructura + datos).
+DROP TABLE modelos;
+
+--32. Eliminar completamente la tabla modelos utilizando la opción CASCADE.
+DROP TABLE modelos CASCADE;
+SELECT * FROM versiones;
