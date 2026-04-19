@@ -101,6 +101,7 @@ SELECT s.ciudad , m.nombre AS modelo , v.nombre AS version , s.stock
 FROM sucursales s 
 JOIN versiones v ON s.id_version = v.id_version 
 JOIN modelos m ON m.id_modelo = v.id_modelo;
+
 SELECT * FROM modelos;
 SELECT * FROM sucursales;
 SELECT * FROM versiones;
